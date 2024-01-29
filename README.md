@@ -1,15 +1,18 @@
-# Quiz_game-Swan_Joulin-CDOF4
+# ❓ Quiz_game-Swan_Joulin-CDOF4 ❓
 
-## Overview
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/github-readme-terminal)
+![PyPI - License](https://img.shields.io/pypi/l/github-readme-terminal)
+
+## 📘 Overview
 This Python Quiz Game is a simple, interactive console-based game that tests your knowledge across various categories and difficulty levels. Players answer questions fetched from the Open Trivia Database and must answer a set of questions correctly within a specified time limit to win.
 
-## Requirements
+## 📦 Requirements
 - **Python Version**: The game is designed to run under Python 3. Ensure you have Python 3 installed on your system.
 - **External Libraries**: This game requires the `requests` library to fetch questions from the Open Trivia Database. Install it using pip:
   ```bash
   pip install requests
 
-## Running the Game
+## ▶️ Running the Game
 Standard Execution: Run the script in a terminal or command prompt:
   ```bash
 python quiz_game.py
