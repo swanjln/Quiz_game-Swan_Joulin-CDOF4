@@ -3,7 +3,8 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/github-readme-terminal)
 ![PyPI - License](https://img.shields.io/pypi/l/github-readme-terminal)
 
-![image](https://github.com/swanjln/Quiz_game-Swan_Joulin-CDOF4/assets/151690369/947b606d-eeea-4128-a11e-5a56861900d0)
+![image](https://github.com/swanjln/Quiz_game-Swan_Joulin-CDOF4/assets/151690369/3a3c662f-6b55-45db-946f-984ea97ace6a)
+
 
 ## 📘 Overview 📘
 This Python Quiz Game is a simple, interactive console-based game that tests your knowledge across various categories and difficulty levels. Players answer questions fetched from the Open Trivia Database and must answer a set of questions correctly within a specified time limit to win.
