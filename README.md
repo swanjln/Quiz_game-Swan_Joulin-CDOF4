@@ -1,7 +1,8 @@
-# ❓ Quiz_game-Swan_Joulin-CDOF4 ❓
 
 <p align="center">
     <img width="640" src="https://github.com/swanjln/Quiz_game-Swan_Joulin-CDOF4/assets/151690369/56d664c5-bb42-4f4a-80e1-0fb23762e112">
+    <br>
+    <b># ❓ Quiz_game-Swan_Joulin-CDOF4 ❓</b>
 </p>
 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/github-readme-terminal)
