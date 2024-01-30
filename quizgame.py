@@ -51,38 +51,48 @@ def get_user_preferences():
 
     return category_id, difficulty
 
+# Function to display the timer
+def display_timer(start_time, time_limit):
+    elapsed_time = int(time.time() - start_time)
+    time_left = max(0, time_limit - elapsed_time)
+    print(f"Time left: {time_left} seconds")
+
 # Main game function
 def quiz_game(total_questions=50, time_limit=60):
-    category_id, difficulty = get_user_preferences()
-    questions = fetch_questions(amount=total_questions, category=category_id, difficulty=difficulty)
-    correct_answers = 0
-    start_time = time.time()
+    replay = True
     
-    for question in questions:
-        is_correct, correct_answer = ask_question(question)
-        if time.time() - start_time > time_limit:
-            print("Time's up!")
-            break
-        if is_correct:
-            print("Correct!")
-            correct_answers += 1
-        else:
-            print("Wrong answer!")
-            print(f"The correct answer was {correct_answer}")
-        print(f"Time left: {int(time_limit - (time.time() - start_time))} seconds\n")
-        # Prompt the user to press Enter to continue
-        input("Press Enter to continue...")
-        clear_console()
+    while replay:
+        category_id, difficulty = get_user_preferences()
+        questions = fetch_questions(amount=total_questions, category=category_id, difficulty=difficulty)
+        correct_answers = 0
+        start_time = time.time()
+    
+        for question in questions:
+            if time.time() - start_time > time_limit:
+                print("Time's up!")
+                replay = input("Do you want to replay the game? (y/N)").lower() == 'y'
+                break
+            display_timer(start_time, time_limit)
         
-        if correct_answers == 5:
-            print("Congratulations, you've won the game!")
+            if ask_question(question):
+                print("Correct!")
+                correct_answers += 1
+            else:
+                print("Wrong answer!")
+        
             # Prompt the user to press Enter to continue
             input("Press Enter to continue...")
-            return
+            clear_console()
+        
+            if correct_answers == 5:
+                print("Congratulations, you've won the game!")
+                replay = input("Do you want to replay the game? (y/N)").lower() == 'y'
+                break
 
-    print(f"Game over! You answered {correct_answers}/{total_questions} questions correctly.")
-    # Prompt the user to press Enter to continue
-    input("Press Enter to continue...")
+        if not replay:
+            print(f"Game over! You answered {correct_answers}/{total_questions} questions correctly.")
+            # Prompt the user to press Enter to continue
+            input("Press Enter to exit...")
 
 # Start the game
 quiz_game()
